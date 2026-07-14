@@ -1,0 +1,24 @@
+name: Run Minecraft AFK Bot
+
+on:
+  workflow_dispatch: # يتيح لك تشغيل البوت يدوياً بضغطة زر
+  schedule:
+    - cron: '*/20 * * * *' # سيعيد تشغيل البوت تلقائياً كل 20 دقيقة لضمان عدم توقفه
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-level: '18'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Bot
+        run: node index.js
