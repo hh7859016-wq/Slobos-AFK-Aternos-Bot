@@ -6,8 +6,7 @@
     "type": "offline"
   },
   "server": {
-    "ip": "blue_fox.aternos.me
-",
+    "ip": "blue_fox.aternos.me",
     "port": 54499,
     "version": "",
     "try-creative": false
